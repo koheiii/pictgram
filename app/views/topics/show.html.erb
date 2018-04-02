@@ -1,0 +1,22 @@
+<div class="topic-index-wrapper">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="topic-index-single">
+            <h2 class="topic-author">
+              <%= @topics.user.name %>
+            </h2>
+            <%= image_tag @topics.image.url %>
+             <%= link_to new_topic_comment_path(topic_id: @topics.id) do %>
+              <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <% end %>
+            <% @comments.each do |comment| %>
+            <p class="comment-text">
+              <%= comment.content %>
+            </p>
+           <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
